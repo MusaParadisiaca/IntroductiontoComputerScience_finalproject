@@ -1,0 +1,977 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Rectangle2D?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="522.0" prefWidth="844.0" style="-fx-background-color: lightblue;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="finalproject_test2.menucontroller">
+   <children>
+      <ImageView fx:id="background" fitHeight="522.0" fitWidth="844.0" pickOnBounds="true" preserveRatio="true">
+         <viewport>
+            <Rectangle2D />
+         </viewport>
+      </ImageView>
+      <Pane fx:id="menu" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="522.0" prefWidth="844.0">
+         <children>
+            <Button fx:id="throwcoin" layoutX="102.0" layoutY="41.0" mnemonicParsing="false" onAction="#press_throw_coin" prefHeight="65.0" prefWidth="129.0" text="擲硬幣" textAlignment="CENTER">
+               <font>
+                  <Font size="27.0" />
+               </font>
+            </Button>
+            <Button layoutX="469.0" layoutY="390.0" mnemonicParsing="false" onAction="#leave" prefHeight="50.0" prefWidth="99.0" text="離開">
+               <font>
+                  <Font size="29.0" />
+               </font>
+            </Button>
+            <Button fx:id="shop" layoutX="609.0" layoutY="390.0" mnemonicParsing="false" onAction="#shop" prefHeight="58.0" prefWidth="165.0" text="商城">
+               <font>
+                  <Font size="29.0" />
+               </font>
+            </Button>
+            <Button fx:id="throwdice" layoutX="102.0" layoutY="141.0" mnemonicParsing="false" onAction="#press_throw_dice" prefHeight="65.0" prefWidth="129.0" text="骰子比大小" textAlignment="CENTER">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
+            <Button fx:id="point_21" layoutX="102.0" layoutY="242.0" mnemonicParsing="false" onAction="#press_point_21" prefHeight="65.0" prefWidth="129.0" text="21點" textAlignment="CENTER">
+               <font>
+                  <Font size="27.0" />
+               </font>
+            </Button>
+            <Button fx:id="slot" layoutX="102.0" layoutY="343.0" mnemonicParsing="false" onAction="#press_slot" prefHeight="65.0" prefWidth="129.0" text="拉霸機" textAlignment="CENTER">
+               <font>
+                  <Font size="27.0" />
+               </font>
+            </Button>
+            <Label fx:id="currentmoney" layoutX="250.0" layoutY="41.0" prefHeight="42.0" prefWidth="141.0" text="目前金錢:">
+               <font>
+                  <Font name="System Bold Italic" size="32.0" />
+               </font>
+            </Label>
+            <Label fx:id="money" layoutX="392.0" layoutY="43.0" prefHeight="42.0" prefWidth="202.0" text="1000">
+               <font>
+                  <Font name="System Bold" size="32.0" />
+               </font>
+            </Label>
+            <Button fx:id="horse_race_button" layoutX="102.0" layoutY="444.0" mnemonicParsing="false" onAction="#press_horse_race" prefHeight="65.0" prefWidth="129.0" text="賽馬" textAlignment="CENTER">
+               <font>
+                  <Font size="27.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+      <Pane fx:id="betmoney" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="522.0" prefWidth="844.0" visible="false">
+         <children>
+            <Label layoutX="310.0" layoutY="84.0" prefHeight="45.0" prefWidth="225.0" text="請輸入賭金金額">
+               <font>
+                  <Font name="System Bold" size="32.0" />
+               </font>
+            </Label>
+            <TextField fx:id="cash" layoutX="310.0" layoutY="202.0" prefHeight="37.0" prefWidth="225.0" text="請輸入金額">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </TextField>
+            <Button fx:id="back" layoutX="41.0" layoutY="26.0" mnemonicParsing="false" onAction="#gobacktomenu_betmoney" prefHeight="30.0" prefWidth="56.0" text="返回" />
+            <Button layoutX="378.0" layoutY="323.0" mnemonicParsing="false" onAction="#sure" prefHeight="45.0" prefWidth="88.0" text="確定">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+      <Pane fx:id="throw_coin_rule" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="522.0" prefWidth="844.0" visible="false">
+         <children>
+            <Button fx:id="next_coin" layoutX="392.0" layoutY="416.0" mnemonicParsing="false" onAction="#next_coin" text="下一步">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Label layoutX="341.0" layoutY="24.0" text="擲硬幣規則">
+               <font>
+                  <Font name="System Bold Italic" size="33.0" />
+               </font>
+            </Label>
+            <Label layoutX="132.0" layoutY="198.0" style="-fx-background-color: lightblue;" text="操作方法：請先選擇頭或是字，再按下&quot;確定&quot;。&#10;之後會隨機出現硬幣的其中一面，如果跟玩家選擇的一樣就能獲得賭金，&#10;反之則失去賭金">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="63.0" fitWidth="90.0" layoutX="245.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../final_project/coin_face.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="63.0" fitWidth="90.0" layoutX="515.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../final_project/coin_word.jpg" />
+               </image>
+            </ImageView>
+            <Button fx:id="back1" layoutX="41.0" layoutY="26.0" mnemonicParsing="false" onAction="#gobacktomenu_coin_rule" prefHeight="30.0" prefWidth="56.0" text="返回" />
+         </children>
+      </Pane>
+      <Pane fx:id="throwacoin" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="522.0" prefWidth="844.0" visible="false">
+         <children>
+            <Button fx:id="head_button" layoutX="192.0" layoutY="190.0" mnemonicParsing="false" onAction="#head" prefHeight="73.0" prefWidth="79.0" text="頭">
+               <font>
+                  <Font size="33.0" />
+               </font>
+            </Button>
+            <Button fx:id="word_button" layoutX="574.0" layoutY="190.0" mnemonicParsing="false" onAction="#word" prefHeight="73.0" prefWidth="79.0" text="字">
+               <font>
+                  <Font size="33.0" />
+               </font>
+            </Button>
+            <Button fx:id="sure" layoutX="363.0" layoutY="320.0" mnemonicParsing="false" onAction="#ok" prefHeight="80.0" prefWidth="115.0" text="確定">
+               <font>
+                  <Font size="32.0" />
+               </font>
+            </Button>
+            <Label fx:id="win" layoutX="361.0" layoutY="227.0" prefHeight="73.0" prefWidth="105.0" style="-fx-background-color: lightblue;" text="你贏了" textAlignment="CENTER" visible="false">
+               <font>
+                  <Font size="34.0" />
+               </font>
+            </Label>
+            <Label fx:id="lose" layoutX="361.0" layoutY="227.0" prefHeight="73.0" prefWidth="105.0" style="-fx-background-color: lightblue;" text="你輸了" textAlignment="CENTER" visible="false">
+               <font>
+                  <Font size="34.0" />
+               </font>
+            </Label>
+            <Button fx:id="back2" layoutX="41.0" layoutY="26.0" mnemonicParsing="false" onAction="#gobacktomenu_coin" prefHeight="30.0" prefWidth="56.0" text="返回" />
+            <ImageView fx:id="coin_face" fitHeight="150.0" fitWidth="200.0" layoutX="336.0" layoutY="56.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../final_project/coin_face.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="coin_word" fitHeight="150.0" fitWidth="200.0" layoutX="332.0" layoutY="56.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../final_project/coin_word.jpg" />
+               </image>
+            </ImageView>
+            <Label fx:id="nochoose" layoutX="325.0" layoutY="227.0" prefHeight="73.0" prefWidth="178.0" style="-fx-background-color: lightblue;" text="你沒做選擇" textAlignment="CENTER" visible="false">
+               <font>
+                  <Font size="34.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane fx:id="throw_dice_rule" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="522.0" prefWidth="844.0" visible="false">
+         <children>
+            <Button fx:id="next_dice" layoutX="392.0" layoutY="416.0" mnemonicParsing="false" onAction="#next_dice" text="下一步">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Label layoutX="313.0" layoutY="24.0" prefHeight="43.0" prefWidth="218.0" text="骰子比大小規則">
+               <font>
+                  <Font name="System Bold Italic" size="30.0" />
+               </font>
+            </Label>
+            <Label layoutX="162.0" layoutY="207.0" style="-fx-background-color: lightblue;" text="按下&quot;開始&quot;後，雙方會各出現一顆骰子，上面的點數是隨機的，&#10;只要玩家的點數大於電腦的點數就能贏得賭金，反之則失去賭金。&#10;">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="63.0" fitWidth="90.0" layoutX="238.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../final_project/dice_1.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="63.0" fitWidth="90.0" layoutX="531.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../final_project/dice_6.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="back3" layoutX="41.0" layoutY="26.0" mnemonicParsing="false" onAction="#gobacktomenu_dice_rule" prefHeight="30.0" prefWidth="56.0" text="返回" />
+         </children>
+      </Pane>
+      <Pane fx:id="throw_dice" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="522.0" prefWidth="844.0" visible="false">
+         <children>
+            <ImageView fx:id="p_dice1" fitHeight="140.0" fitWidth="130.0" layoutX="155.0" layoutY="160.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../final_project/dice_1.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="169.0" layoutY="101.0" prefHeight="42.0" prefWidth="102.0" text="player">
+               <font>
+                  <Font name="System Bold" size="32.0" />
+               </font>
+            </Label>
+            <Label layoutX="542.0" layoutY="101.0" text="computer">
+               <font>
+                  <Font name="System Bold" size="32.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="c_dice1" fitHeight="140.0" fitWidth="130.0" layoutX="550.0" layoutY="160.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../final_project/dice_1.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="p_dice2" fitHeight="140.0" fitWidth="130.0" layoutX="155.0" layoutY="160.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../final_project/dice_2.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="p_dice3" fitHeight="140.0" fitWidth="130.0" layoutX="155.0" layoutY="160.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../final_project/dice_3.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="p_dice4" fitHeight="140.0" fitWidth="130.0" layoutX="155.0" layoutY="160.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../final_project/dice_4.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="p_dice5" fitHeight="140.0" fitWidth="130.0" layoutX="155.0" layoutY="160.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../final_project/dice_5.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="p_dice6" fitHeight="140.0" fitWidth="130.0" layoutX="155.0" layoutY="160.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../final_project/dice_6.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="c_dice2" fitHeight="140.0" fitWidth="130.0" layoutX="550.0" layoutY="160.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../final_project/dice_2.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="c_dice3" fitHeight="140.0" fitWidth="130.0" layoutX="550.0" layoutY="159.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../final_project/dice_3.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="c_dice4" fitHeight="140.0" fitWidth="130.0" layoutX="550.0" layoutY="159.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../final_project/dice_4.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="c_dice5" fitHeight="140.0" fitWidth="130.0" layoutX="550.0" layoutY="159.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../final_project/dice_5.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="c_dice6" fitHeight="140.0" fitWidth="130.0" layoutX="550.0" layoutY="160.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../final_project/dice_6.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="start" layoutX="375.0" layoutY="193.0" mnemonicParsing="false" onAction="#press_start_dice" text="開始">
+               <font>
+                  <Font size="32.0" />
+               </font>
+            </Button>
+            <Button fx:id="back4" layoutX="41.0" layoutY="26.0" mnemonicParsing="false" onAction="#gobacktomenu_dice" prefHeight="30.0" prefWidth="56.0" text="返回" />
+            <Label fx:id="win1" layoutX="376.0" layoutY="333.0" prefHeight="73.0" prefWidth="105.0" style="-fx-background-color: lightblue;" text="你贏了" textAlignment="CENTER" visible="false">
+               <font>
+                  <Font size="34.0" />
+               </font>
+            </Label>
+            <Label fx:id="lose1" layoutX="376.0" layoutY="333.0" prefHeight="73.0" prefWidth="105.0" style="-fx-background-color: lightblue;" text="你輸了" textAlignment="CENTER" visible="false">
+               <font>
+                  <Font size="34.0" />
+               </font>
+            </Label>
+            <Label fx:id="draw" layoutX="376.0" layoutY="333.0" prefHeight="73.0" prefWidth="105.0" style="-fx-background-color: lightblue;" text="平　手" textAlignment="CENTER" visible="false">
+               <font>
+                  <Font size="34.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane fx:id="point_21_rule" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="522.0" prefWidth="844.0" visible="false">
+         <children>
+            <Button fx:id="next_point21_rule" layoutX="392.0" layoutY="416.0" mnemonicParsing="false" onAction="#next_poinr21_rule" text="下一步">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Label layoutX="341.0" layoutY="24.0" prefHeight="43.0" prefWidth="164.0" text="21點規則">
+               <font>
+                  <Font name="System Bold Italic" size="33.0" />
+               </font>
+            </Label>
+            <Label layoutX="44.0" layoutY="88.0" style="-fx-background-color: lightblue;" text="在這場遊戲中，電腦為莊家&#10;每張撲克牌代表不同的點數，A為1或11 ，10JQK代表10，其餘跟牌面上的數字一樣。&#10;當點數總和超過21點時就會輸掉遊戲。若雙方都沒有超過21點，則點數較大者勝。&#10;&#10;莊家特殊規則：莊家的牌必須超過17點一旦超過就不能再抽牌。&#10;&#10;操作方法:&#10;按下開始後會先發給玩家級電腦各兩張牌，且電腦的第一張牌會是蓋著的。&#10;發完牌後按下&quot;抽牌&quot;將會再發給玩家一張牌，抽牌次數沒有限制。若不想再抽牌，&#10;請按下&quot;停止&quot;，會輪到電腦抽牌。&#10;電腦抽完牌後，按下&quot;結果&quot;，就會顯示這場遊戲的勝負。">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="63.0" fitWidth="90.0" layoutX="284.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../final_project/poker_back.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="63.0" fitWidth="90.0" layoutX="497.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../final_project/poker_back.jpg" />
+               </image>
+            </ImageView>
+            <Button fx:id="back5" layoutX="41.0" layoutY="26.0" mnemonicParsing="false" onAction="#gobacktomenu_point21_rule" prefHeight="30.0" prefWidth="56.0" text="返回" />
+         </children>
+      </Pane>
+      <Pane fx:id="point21" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="522.0" prefWidth="844.0" visible="false">
+         <children>
+            <ImageView fx:id="poker_back11" fitHeight="150.0" fitWidth="200.0" layoutX="350.0" layoutY="180.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../final_project/poker_back.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="poker_club_2" fitHeight="150.0" fitWidth="200.0" layoutX="350.0" layoutY="180.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../final_project/poker_2_club.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="poker_club_1" fitHeight="150.0" fitWidth="200.0" layoutX="350.0" layoutY="180.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../final_project/poker_1_club.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="poker_back" fitHeight="150.0" fitWidth="200.0" layoutX="350.0" layoutY="180.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../final_project/poker_back.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="poker_club_3" fitHeight="150.0" fitWidth="200.0" layoutX="350.0" layoutY="180.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../final_project/poker_3_club.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="poker_club_4" fitHeight="150.0" fitWidth="200.0" layoutX="350.0" layoutY="180.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../final_project/poker_4_club.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="poker_club_5" fitHeight="150.0" fitWidth="200.0" layoutX="350.0" layoutY="180.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../final_project/poker_5_club.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="poker_club_6" fitHeight="150.0" fitWidth="200.0" layoutX="350.0" layoutY="180.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../final_project/poker_6_club.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="poker_club_7" fitHeight="150.0" fitWidth="200.0" layoutX="350.0" layoutY="180.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../final_project/poker_7_club.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="poker_club_8" fitHeight="150.0" fitWidth="200.0" layoutX="350.0" layoutY="180.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../final_project/poker_8_club.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="poker_club_9" fitHeight="150.0" fitWidth="200.0" layoutX="350.0" layoutY="180.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../final_project/poker_9_club.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="poker_club_10" fitHeight="150.0" fitWidth="200.0" layoutX="350.0" layoutY="180.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../final_project/poker_10_club.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="poker_club_11" fitHeight="150.0" fitWidth="200.0" layoutX="350.0" layoutY="180.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../final_project/poker_11_club.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="poker_club_12" fitHeight="150.0" fitWidth="200.0" layoutX="350.0" layoutY="180.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../final_project/poker_12_club.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="poker_club_13" fitHeight="150.0" fitWidth="200.0" layoutX="350.0" layoutY="180.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../final_project/poker_13_club.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="poker_daimond_1" fitHeight="150.0" fitWidth="200.0" layoutX="350.0" layoutY="180.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../final_project/poker_1_daimond.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="poker_daimond_2" fitHeight="150.0" fitWidth="200.0" layoutX="350.0" layoutY="180.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../final_project/poker_2_daimond.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="poker_daimond_3" fitHeight="150.0" fitWidth="200.0" layoutX="350.0" layoutY="180.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../final_project/poker_3_daimond.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="poker_daimond_4" fitHeight="150.0" fitWidth="200.0" layoutX="350.0" layoutY="180.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../final_project/poker_4_daimond.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="poker_daimond_5" fitHeight="150.0" fitWidth="200.0" layoutX="350.0" layoutY="180.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../final_project/poker_5_daimond.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="poker_daimond_6" fitHeight="150.0" fitWidth="200.0" layoutX="350.0" layoutY="180.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../final_project/poker_6_daimond.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="poker_daimond_7" fitHeight="150.0" fitWidth="200.0" layoutX="350.0" layoutY="180.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../final_project/poker_7_daimond.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="poker_daimond_8" fitHeight="150.0" fitWidth="200.0" layoutX="350.0" layoutY="180.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../final_project/poker_8_daimond.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="poker_daimond_9" fitHeight="150.0" fitWidth="200.0" layoutX="350.0" layoutY="180.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../final_project/poker_9_daimond.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="poker_daimond_10" fitHeight="150.0" fitWidth="200.0" layoutX="350.0" layoutY="180.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../final_project/poker_10_daimond.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="poker_daimond_11" fitHeight="150.0" fitWidth="200.0" layoutX="350.0" layoutY="180.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../final_project/poker_11_diamond.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="poker_daimond_12" fitHeight="150.0" fitWidth="200.0" layoutX="350.0" layoutY="180.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../final_project/poker_12_diamond.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="poker_daimond_13" fitHeight="150.0" fitWidth="200.0" layoutX="350.0" layoutY="180.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../final_project/poker_13_diamond.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="poker_heart_1" fitHeight="150.0" fitWidth="200.0" layoutX="350.0" layoutY="180.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../final_project/poker_1_heart.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="poker_heart_2" fitHeight="150.0" fitWidth="200.0" layoutX="350.0" layoutY="180.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../final_project/poker_2_heart.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="poker_heart_3" fitHeight="150.0" fitWidth="200.0" layoutX="350.0" layoutY="180.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../final_project/poker_3_heart.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="poker_heart_4" fitHeight="150.0" fitWidth="200.0" layoutX="350.0" layoutY="180.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../final_project/poker_4_heart.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="poker_heart_5" fitHeight="150.0" fitWidth="200.0" layoutX="350.0" layoutY="180.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../final_project/poker_5_heart.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="poker_heart_6" fitHeight="150.0" fitWidth="200.0" layoutX="350.0" layoutY="180.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../final_project/poker_6_heart.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="poker_heart_7" fitHeight="150.0" fitWidth="200.0" layoutX="350.0" layoutY="180.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../final_project/poker_7_heart.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="poker_heart_8" fitHeight="150.0" fitWidth="200.0" layoutX="350.0" layoutY="180.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../final_project/poker_8_heart.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="poker_heart_9" fitHeight="150.0" fitWidth="200.0" layoutX="350.0" layoutY="180.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../final_project/poker_9_heart.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="poker_heart_10" fitHeight="150.0" fitWidth="200.0" layoutX="350.0" layoutY="180.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../final_project/poker_10_heart.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="poker_heart_11" fitHeight="150.0" fitWidth="200.0" layoutX="350.0" layoutY="180.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../final_project/poker_11_heart.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="poker_heart_12" fitHeight="150.0" fitWidth="200.0" layoutX="350.0" layoutY="180.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../final_project/poker_12_heart.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="poker_heart_13" fitHeight="150.0" fitWidth="200.0" layoutX="350.0" layoutY="180.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../final_project/poker_13_heart.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="poker_spades_1" fitHeight="150.0" fitWidth="200.0" layoutX="350.0" layoutY="180.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../final_project/poker_1_spades.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="poker_spades_2" fitHeight="150.0" fitWidth="200.0" layoutX="350.0" layoutY="180.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../final_project/poker_2_spades.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="poker_spades_3" fitHeight="150.0" fitWidth="200.0" layoutX="350.0" layoutY="180.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../final_project/poker_3_spades.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="poker_spades_4" fitHeight="150.0" fitWidth="200.0" layoutX="350.0" layoutY="180.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../final_project/poker_4_spades.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="poker_spades_5" fitHeight="150.0" fitWidth="200.0" layoutX="350.0" layoutY="180.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../final_project/poker_5_spades.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="poker_spades_6" fitHeight="150.0" fitWidth="200.0" layoutX="350.0" layoutY="180.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../final_project/poker_6_spades.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="poker_spades_7" fitHeight="150.0" fitWidth="200.0" layoutX="350.0" layoutY="180.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../final_project/poker_7_spades.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="poker_spades_8" fitHeight="150.0" fitWidth="200.0" layoutX="350.0" layoutY="180.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../final_project/poker_8_spades.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="poker_spades_9" fitHeight="150.0" fitWidth="200.0" layoutX="350.0" layoutY="180.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../final_project/poker_9_spades.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="poker_spades_10" fitHeight="150.0" fitWidth="200.0" layoutX="350.0" layoutY="180.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../final_project/poker_10_spades.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="poker_spades_11" fitHeight="150.0" fitWidth="200.0" layoutX="350.0" layoutY="180.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../final_project/poker_11_spades.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="poker_spades_12" fitHeight="150.0" fitWidth="200.0" layoutX="350.0" layoutY="180.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../final_project/poker_12_spades.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="poker_spades_13" fitHeight="150.0" fitWidth="200.0" layoutX="350.0" layoutY="180.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../final_project/poker_13_spades.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="poker_back1" fitHeight="150.0" fitWidth="200.0" layoutX="350.0" layoutY="180.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../final_project/poker_back.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="poker_back111" fitHeight="150.0" fitWidth="200.0" layoutX="350.0" layoutY="180.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../final_project/poker_back.jpg" />
+               </image>
+            </ImageView>
+            <Button fx:id="start1" layoutX="349.0" layoutY="204.0" mnemonicParsing="false" onAction="#press_start_point21" prefHeight="56.0" prefWidth="108.0" text="開始">
+               <font>
+                  <Font size="32.0" />
+               </font>
+            </Button>
+            <Label fx:id="com" layoutX="368.0" layoutY="14.0" prefHeight="42.0" prefWidth="68.0" style="-fx-background-color: white;" text="電腦">
+               <font>
+                  <Font size="32.0" />
+               </font>
+            </Label>
+            <Label fx:id="player" layoutX="377.0" layoutY="466.0" prefHeight="42.0" prefWidth="68.0" style="-fx-background-color: white;" text="玩家">
+               <font>
+                  <Font size="32.0" />
+               </font>
+            </Label>
+            <Button fx:id="back6" layoutX="41.0" layoutY="26.0" mnemonicParsing="false" onAction="#gobacktomenu_point21" prefHeight="30.0" prefWidth="56.0" text="返回" />
+            <ImageView fx:id="poker_back2" fitHeight="150.0" fitWidth="200.0" layoutX="100.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../final_project/poker_back.jpg" />
+               </image>
+            </ImageView>
+            <Button fx:id="draw1" layoutX="701.0" layoutY="320.0" mnemonicParsing="false" onAction="#press_draw" prefHeight="54.0" prefWidth="120.0" text="抽牌" visible="false">
+               <font>
+                  <Font size="32.0" />
+               </font>
+            </Button>
+            <Button fx:id="stand" layoutX="701.0" layoutY="416.0" mnemonicParsing="false" onAction="#press_stand" prefHeight="54.0" prefWidth="120.0" text="停止" visible="false">
+               <font>
+                  <Font size="32.0" />
+               </font>
+            </Button>
+            <Button fx:id="result" layoutX="260.0" layoutY="172.0" mnemonicParsing="false" onAction="#press_result" prefHeight="173.0" prefWidth="271.0" text="結果" visible="false">
+               <font>
+                  <Font size="78.0" />
+               </font>
+            </Button>
+            <Label fx:id="result_word" layoutX="318.0" layoutY="185.0" prefHeight="103.0" prefWidth="186.0" style="-fx-background-color: white;" text="你贏了" visible="false">
+               <font>
+                  <Font size="60.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane fx:id="slot_rule" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="522.0" prefWidth="844.0" visible="false">
+         <children>
+            <Button fx:id="backslot" layoutX="392.0" layoutY="416.0" mnemonicParsing="false" onAction="#backslot" text="下一步">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Label layoutX="341.0" layoutY="24.0" text="拉霸機規則">
+               <font>
+                  <Font name="System Bold Italic" size="33.0" />
+               </font>
+            </Label>
+            <Label layoutX="149.0" layoutY="140.0" style="-fx-background-color: lightblue;" text="拉霸機遊玩一次需要花費200元，按下旁邊的，play鍵即可遊玩。&#10;獎勵規則如下。&#10;&#10;五個7==&gt;50000         相同程式語言五個==&gt;35000&#10;五個星星==&gt;25000                      櫻桃或鈴鐺五個==&gt;20000&#10;四個7==&gt;17000                            相同程式語言四個==&gt;14000&#10;星星四個==&gt;12000                      櫻桃或鈴鐺四個==&gt;10000&#10;三個7==&gt;7000                              相同程式語言三個==&gt;5000&#10;星星三個==&gt;3000                         櫻桃或鈴鐺三個==&gt;2000                        ">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="63.0" fitWidth="90.0" layoutX="245.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../final_project/7%20picture.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="63.0" fitWidth="90.0" layoutX="515.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../final_project/7%20picture.jpg" />
+               </image>
+            </ImageView>
+            <Button fx:id="back7" layoutX="41.0" layoutY="26.0" mnemonicParsing="false" onAction="#gobacktomenu_slot_rule" prefHeight="30.0" prefWidth="56.0" text="返回" />
+         </children>
+      </Pane>
+      <Pane fx:id="slot_machine" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="522.0" prefWidth="844.0" visible="false">
+         <children>
+            <ImageView fitHeight="175.0" fitWidth="358.0" layoutX="243.0" layoutY="187.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../final_project/slot%20machine.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="a" fitHeight="40.0" fitWidth="50.0" layoutX="271.0" layoutY="230.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../../../../Pictures/slot%20m%20素材/7%20picture.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="b" fitHeight="40.0" fitWidth="50.0" layoutX="338.0" layoutY="230.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../Pictures/slot%20m%20素材/7%20picture.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="c" fitHeight="40.0" fitWidth="50.0" layoutX="397.0" layoutY="230.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../Pictures/slot%20m%20素材/7%20picture.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="d" fitHeight="40.0" fitWidth="50.0" layoutX="459.0" layoutY="230.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../Pictures/slot%20m%20素材/7%20picture.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="e" fitHeight="40.0" fitWidth="50.0" layoutX="521.0" layoutY="230.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../Pictures/slot%20m%20素材/7%20picture.jpg" />
+               </image>
+            </ImageView>
+            <Button fx:id="start2" layoutX="668.0" layoutY="215.0" mnemonicParsing="false" onAction="#play" prefHeight="71.0" prefWidth="133.0" text="Play">
+               <font>
+                  <Font size="32.0" />
+               </font>
+            </Button>
+            <Label fx:id="winscene" layoutX="106.0" layoutY="64.0">
+               <font>
+                  <Font name="System Bold Italic" size="26.0" />
+               </font>
+            </Label>
+            <Label fx:id="fail" layoutX="355.0" layoutY="328.0" style="-fx-background-color: lightblue;" text="餘額不足" visible="false">
+               <font>
+                  <Font size="26.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="a1" fitHeight="33.0" fitWidth="50.0" layoutX="277.0" layoutY="259.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../final_project/7%20picture.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="b1" fitHeight="33.0" fitWidth="50.0" layoutX="341.0" layoutY="259.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../final_project/7%20picture.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="c1" fitHeight="33.0" fitWidth="50.0" layoutX="400.0" layoutY="259.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../final_project/7%20picture.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="d1" fitHeight="33.0" fitWidth="50.0" layoutX="465.0" layoutY="259.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../final_project/7%20picture.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="e1" fitHeight="33.0" fitWidth="50.0" layoutX="527.0" layoutY="259.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../final_project/7%20picture.jpg" />
+               </image>
+            </ImageView>
+            <Button fx:id="back8" layoutX="41.0" layoutY="26.0" mnemonicParsing="false" onAction="#gobacktomenu_slot" prefHeight="30.0" prefWidth="56.0" text="返回" />
+         </children>
+      </Pane>
+      <Pane fx:id="shop_pane" prefHeight="522.0" prefWidth="844.0" visible="false">
+         <children>
+            <RadioButton fx:id="choice1" layoutX="166.0" layoutY="205.0" mnemonicParsing="false" onAction="#choice1" prefHeight="55.0" prefWidth="92.0" style="-fx-background-color: lightblue;" text="選擇">
+               <toggleGroup>
+                  <ToggleGroup fx:id="choice" />
+               </toggleGroup>
+               <font>
+                  <Font name="System Bold Italic" size="23.0" />
+               </font>
+            </RadioButton>
+            <Button fx:id="buy1" layoutX="165.0" layoutY="206.0" mnemonicParsing="false" onAction="#buy1" text="購買">
+               <font>
+                  <Font size="28.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="126.0" fitWidth="178.0" layoutX="123.0" layoutY="86.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@background1.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="back9" layoutX="41.0" layoutY="26.0" mnemonicParsing="false" onAction="#gobacktomenu_shop" prefHeight="30.0" prefWidth="56.0" text="返回" />
+            <RadioButton fx:id="choice2" layoutX="412.0" layoutY="205.0" mnemonicParsing="false" onAction="#choice2" prefHeight="55.0" prefWidth="92.0" style="-fx-background-color: lightblue;" text="選擇" toggleGroup="$choice">
+               <font>
+                  <Font name="System Bold Italic" size="23.0" />
+               </font>
+            </RadioButton>
+            <Button fx:id="buy2" layoutX="411.0" layoutY="206.0" mnemonicParsing="false" onAction="#buy2" text="購買">
+               <font>
+                  <Font size="28.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="126.0" fitWidth="178.0" layoutX="369.0" layoutY="86.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@background2.jpg" />
+               </image>
+            </ImageView>
+            <Label layoutX="299.0" layoutY="22.0" prefHeight="39.0" prefWidth="225.0" style="-fx-background-color: lightblue;" text="背景一律1000元">
+               <font>
+                  <Font name="System Bold Italic" size="30.0" />
+               </font>
+            </Label>
+            <RadioButton fx:id="choice3" layoutX="642.0" layoutY="205.0" mnemonicParsing="false" onAction="#choice3" prefHeight="55.0" prefWidth="92.0" style="-fx-background-color: lightblue;" text="選擇" toggleGroup="$choice">
+               <font>
+                  <Font name="System Bold Italic" size="23.0" />
+               </font>
+            </RadioButton>
+            <Button fx:id="buy3" layoutX="641.0" layoutY="206.0" mnemonicParsing="false" onAction="#buy3" text="購買">
+               <font>
+                  <Font size="28.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="126.0" fitWidth="178.0" layoutX="599.0" layoutY="86.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@background3.jpg" />
+               </image>
+            </ImageView>
+            <RadioButton fx:id="choice4" layoutX="166.0" layoutY="426.0" mnemonicParsing="false" onAction="#choice4" prefHeight="55.0" prefWidth="92.0" style="-fx-background-color: lightblue;" text="選擇" toggleGroup="$choice">
+               <font>
+                  <Font name="System Bold Italic" size="23.0" />
+               </font>
+            </RadioButton>
+            <Button fx:id="buy4" layoutX="165.0" layoutY="427.0" mnemonicParsing="false" onAction="#buy4" text="購買">
+               <font>
+                  <Font size="28.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="126.0" fitWidth="178.0" layoutX="123.0" layoutY="284.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@background5.jpeg" />
+               </image>
+            </ImageView>
+            <RadioButton fx:id="choice5" layoutX="412.0" layoutY="426.0" mnemonicParsing="false" onAction="#choice5" prefHeight="55.0" prefWidth="92.0" style="-fx-background-color: lightblue;" text="選擇" toggleGroup="$choice">
+               <font>
+                  <Font name="System Bold Italic" size="23.0" />
+               </font>
+            </RadioButton>
+            <Button fx:id="buy5" layoutX="411.0" layoutY="427.0" mnemonicParsing="false" onAction="#buy5" text="購買">
+               <font>
+                  <Font size="28.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="126.0" fitWidth="178.0" layoutX="369.0" layoutY="284.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@background6.jpeg" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <Pane fx:id="horse_race" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="522.0" prefWidth="844.0" visible="false">
+         <children>
+            <Line endX="406.0" endY="-1.1444091796875E-5" layoutX="239.0" layoutY="94.0" startX="-182.0" startY="-1.1444091796875E-5" />
+            <Line endX="465.0" endY="-1.52587890625E-5" layoutX="172.0" layoutY="148.0" startX="-114.99998474121094" startY="-1.52587890625E-5" />
+            <Line endX="474.0" endY="-1.52587890625E-5" layoutX="171.0" layoutY="198.0" startX="-113.99998474121094" startY="-1.52587890625E-5" />
+            <Line endX="465.199951171875" endY="-1.52587890625E-5" layoutX="171.0" layoutY="250.0" startX="-113.99998474121094" startY="-1.52587890625E-5" />
+            <Line endX="475.5999755859375" endY="-1.52587890625E-5" layoutX="166.0" layoutY="305.0" startX="-108.99998474121094" startY="-1.52587890625E-5" />
+            <Line endX="473.0" layoutX="168.0" layoutY="358.0" startX="-110.99998474121094" />
+            <Line endX="-100.0" endY="253.5" layoutX="724.0" layoutY="95.0" startX="-100.0" />
+            <Line endX="-100.0" endY="263.5" layoutX="240.0" layoutY="94.0" startX="-100.0" />
+            <Pane fx:id="end" layoutX="623.0" layoutY="94.0" prefHeight="264.0" prefWidth="22.0" style="-fx-background-color: black;" />
+            <ImageView fx:id="h1" fitHeight="52.0" fitWidth="65.0" layoutX="57.0" layoutY="95.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../uma/horse1.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="h2" fitHeight="52.0" fitWidth="65.0" layoutX="57.0" layoutY="144.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../uma/horse6.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="h3" fitHeight="67.0" fitWidth="65.0" layoutX="57.0" layoutY="189.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../uma/horse7.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="h4" fitHeight="54.0" fitWidth="65.0" layoutX="57.0" layoutY="252.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../uma/horse4.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="h5" fitHeight="49.0" fitWidth="65.0" layoutX="57.0" layoutY="308.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../uma/horse5.jpg" />
+               </image>
+            </ImageView>
+            <Label layoutX="186.0" layoutY="104.0" text="一號*1">
+               <font>
+                  <Font name="System Bold Italic" size="22.0" />
+               </font>
+            </Label>
+            <Label layoutX="186.0" layoutY="154.0" text="二號*2">
+               <font>
+                  <Font name="System Bold Italic" size="22.0" />
+               </font>
+            </Label>
+            <Label layoutX="186.0" layoutY="207.0" text="三號*3">
+               <font>
+                  <Font name="System Bold Italic" size="22.0" />
+               </font>
+            </Label>
+            <Label layoutX="186.0" layoutY="262.0" prefHeight="29.0" prefWidth="69.0" text="四號*4">
+               <font>
+                  <Font name="System Bold Italic" size="22.0" />
+               </font>
+            </Label>
+            <Label layoutX="186.0" layoutY="317.0" text="五號*5">
+               <font>
+                  <Font name="System Bold Italic" size="22.0" />
+               </font>
+            </Label>
+            <Label fx:id="wincoin" layoutX="341.0" layoutY="14.0" text="Label" visible="false">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <RadioButton fx:id="s1" layoutX="121.0" layoutY="437.0" mnemonicParsing="false" text="horse1">
+               <toggleGroup>
+                  <ToggleGroup fx:id="select" />
+               </toggleGroup>
+               <font>
+                  <Font name="System Bold Italic" size="18.0" />
+               </font>
+            </RadioButton>
+            <RadioButton fx:id="s2" layoutX="121.0" layoutY="473.0" mnemonicParsing="false" text="horse2" toggleGroup="$select">
+               <font>
+                  <Font name="System Bold Italic" size="18.0" />
+               </font>
+            </RadioButton>
+            <RadioButton fx:id="s3" layoutX="238.0" layoutY="437.0" mnemonicParsing="false" text="horse3" toggleGroup="$select">
+               <font>
+                  <Font name="System Bold Italic" size="18.0" />
+               </font>
+            </RadioButton>
+            <RadioButton fx:id="s4" layoutX="238.0" layoutY="473.0" mnemonicParsing="false" text="horse4" toggleGroup="$select">
+               <font>
+                  <Font name="System Bold Italic" size="18.0" />
+               </font>
+            </RadioButton>
+            <RadioButton fx:id="s5" layoutX="341.0" layoutY="437.0" mnemonicParsing="false" text="horse5" toggleGroup="$select">
+               <font>
+                  <Font name="System Bold Italic" size="18.0" />
+               </font>
+            </RadioButton>
+            <Button fx:id="call" layoutX="652.0" layoutY="421.0" mnemonicParsing="false" onAction="#callcoin" prefHeight="64.0" prefWidth="104.0" text="開始">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Button>
+            <Button fx:id="back10" layoutX="41.0" layoutY="26.0" mnemonicParsing="false" onAction="#gobacktomenu_horse_race" prefHeight="30.0" prefWidth="56.0" text="返回" visible="false" />
+            <Label fx:id="result1" layoutX="234.0" layoutY="14.0" text="Label" visible="false">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane fx:id="horse_race_rule" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="522.0" prefWidth="844.0" visible="false">
+         <children>
+            <Button fx:id="next_horse_race_rule" layoutX="392.0" layoutY="416.0" mnemonicParsing="false" onAction="#next_horse_race_rule" text="下一步">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Label layoutX="356.0" layoutY="24.0" text="賽馬規則">
+               <font>
+                  <Font name="System Bold Italic" size="33.0" />
+               </font>
+            </Label>
+            <Label layoutX="122.0" layoutY="194.0" style="-fx-background-color: lightblue;" text="賽馬場有五個跑道，1號馬在1號跑道，2號馬在2號跑道...依此類推                &#10;號碼越小的血統越好，贏得比賽的機率越高，相對的能獲得的賭金就越少&#10;若您下注的馬匹獲勝，您將會獲得賭金成以馬匹號碼的金額&#10;&#10;另外，若您沒又選擇馬匹就點擊開始，將會視為認輸，賭金不會返還">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="63.0" fitWidth="90.0" layoutX="311.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@horse2.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="63.0" fitWidth="90.0" layoutX="499.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@horse3.jpg" />
+               </image>
+            </ImageView>
+            <Button fx:id="back11" layoutX="41.0" layoutY="26.0" mnemonicParsing="false" onAction="#gobacktomenu_horse_rule" prefHeight="30.0" prefWidth="56.0" text="返回" />
+         </children>
+      </Pane>
+   </children>
+</Pane>
