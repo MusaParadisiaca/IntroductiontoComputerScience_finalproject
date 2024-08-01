@@ -1,1 +1,2 @@
 # IntroductiontoComputerScience_finalproject
+大一計算機概論期末，幾個小遊戲的集合，包括擲硬幣、21點、骰子比大小、拉霸機和賽馬，透過玩遊戲可以賺到金幣用於購買不同的桌布。
